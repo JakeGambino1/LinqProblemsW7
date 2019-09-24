@@ -27,6 +27,7 @@ namespace LinqProblems
                 "98,100,66,74,55"
             };
 
+            // Number One
             var wordsWithTh = words.Where(w => w.Contains("th"));
             foreach(var word in wordsWithTh)
             {
@@ -34,7 +35,7 @@ namespace LinqProblems
             }
             Console.ReadLine();
 
-
+            // Number Two
             var namesNoDuplicates = names.Distinct();
             foreach (var noDuplicate in namesNoDuplicates)
             {
@@ -42,34 +43,30 @@ namespace LinqProblems
             }
             Console.ReadLine();
 
-            //void testFunction()
-            //{
-            //    //int count = 0;
-            //    for (int i = 0; i < classGrades.Count; i++)
-            //    {
-            //        for (int j = 0; j < classGrades[i].Length - 1; j++)
-            //        {
-            //            var classGradesArr = classGrades[i].Split(',');
-            //            Console.WriteLine(classGradesArr[j]);
-            //        }
-            //    }
-            //}
-
-            Func<List<string>, List<double>> convertToIntList;
-            convertToIntList = SplitList;
-
-            List<double> SplitList(List<string> stringList)
+            // Number Three
+            void AverageGrade(List<string> stringList)
             {
                 var classGradesArr = new List<double>();
+                double averageGrade = 0;
+                List<double> averageGradeList = new List<double>();
+                double totalGradeAverage;
 
                 for (int i = 0; i < stringList.Count; i++)
                 {
-                    classGradesArr = classGrades[i].Split(',').Select(double.Parse).ToList();
+                    classGradesArr = classGrades[i].Split(',').Select(double.Parse).OrderBy(c => c).ToList();
+                    classGradesArr.RemoveAt(0);
+                    averageGrade = classGradesArr.Average();
+                    averageGradeList.Add(averageGrade);
                 }
-                return classGradesArr;
+
+                totalGradeAverage = averageGradeList.Average();
+                Console.WriteLine($"{totalGradeAverage} is the class average");
             }
-            SplitList(classGrades);
+            AverageGrade(classGrades);
             Console.ReadLine();
+
+
+
         }
     }
 }
