@@ -32,9 +32,15 @@ namespace LinqProblems
             {
                 Console.WriteLine(word);
             }
-                Console.ReadLine();
+            Console.ReadLine();
 
-            var namesNoDuplicates = names.Where(n => n.Distinct());
+
+            var namesNoDuplicates = names.Distinct();
+            foreach (var noDuplicate in namesNoDuplicates)
+            {
+                Console.WriteLine(noDuplicate);
+            }
+            Console.ReadLine();
 
 
 
