@@ -1,0 +1,7 @@
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\bin\Debug\LinqProblems.exe.config
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\bin\Debug\LinqProblems.exe
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\bin\Debug\LinqProblems.pdb
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\obj\Debug\LinqProblems.csprojAssemblyReference.cache
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\obj\Debug\LinqProblems.csproj.CoreCompileInputs.cache
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\obj\Debug\LinqProblems.exe
+C:\Users\jakeg\Desktop\devCodeCamp\Week7\LinqProblems\LinqProblems\obj\Debug\LinqProblems.pdb
