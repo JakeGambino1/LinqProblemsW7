@@ -42,8 +42,34 @@ namespace LinqProblems
             }
             Console.ReadLine();
 
+            //void testFunction()
+            //{
+            //    //int count = 0;
+            //    for (int i = 0; i < classGrades.Count; i++)
+            //    {
+            //        for (int j = 0; j < classGrades[i].Length - 1; j++)
+            //        {
+            //            var classGradesArr = classGrades[i].Split(',');
+            //            Console.WriteLine(classGradesArr[j]);
+            //        }
+            //    }
+            //}
 
+            Func<List<string>, List<double>> convertToIntList;
+            convertToIntList = SplitList;
 
+            List<double> SplitList(List<string> stringList)
+            {
+                var classGradesArr = new List<double>();
+
+                for (int i = 0; i < stringList.Count; i++)
+                {
+                    classGradesArr = classGrades[i].Split(',').Select(double.Parse).ToList();
+                }
+                return classGradesArr;
+            }
+            SplitList(classGrades);
+            Console.ReadLine();
         }
     }
 }
