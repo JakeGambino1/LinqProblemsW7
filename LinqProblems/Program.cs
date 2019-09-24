@@ -10,15 +10,8 @@ namespace LinqProblems
     {
         static void Main(string[] args)
         {
-            // Using LINQ, write function that returns all words containing "th"
             List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
-            // Using LINQ, write a function that takes in a list of strings and returns copy without duplicates
             List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Ian", "Mike" };
-            // write a function that:
-            // drops lowest grade
-            // averages the list
-            // averages those averages
-            // expected output = 86.125
             List<string> classGrades = new List<string>()
             {
                 "80,100,92,89,65",
@@ -33,7 +26,6 @@ namespace LinqProblems
             {
                 Console.WriteLine(word);
             }
-            Console.ReadLine();
 
             // Number Two
             var namesNoDuplicates = names.Distinct();
@@ -41,7 +33,6 @@ namespace LinqProblems
             {
                 Console.WriteLine(noDuplicate);
             }
-            Console.ReadLine();
 
             // Number Three
             void AverageGrade(List<string> stringList)
@@ -63,9 +54,37 @@ namespace LinqProblems
                 Console.WriteLine($"{totalGradeAverage} is the class average");
             }
             AverageGrade(classGrades);
-            Console.ReadLine();
+            // Write a function that takes in a string of letters (i.e. “Terrill”) and 
+            // returns an alphabetically ordered string corresponding to the letter frequency 
+            // (i.e. "E1I1L2R2T1")
 
+            void AlphabeticStringReturn(string str)
+            {
+                StringBuilder sb = new StringBuilder();
+                var strArray = str.ToCharArray().OrderBy(s => s).ToList();
+                string stringAdd;
 
+                for (int i = 0; i < strArray.Count; i++)
+                {
+                    int counter = 0;
+                    while ((i + counter < strArray.Count) && 
+                        strArray?[i] == strArray?[i + counter])
+                    {
+                        counter++;
+                    }
+                    stringAdd = $"{counter}{strArray[i]}";
+
+                    if (sb.ToString().Contains($"{strArray[i]}"))
+                    {
+                        continue;
+                    }
+                    sb.Append(stringAdd);
+                    counter = 0;
+                }
+                Console.WriteLine(sb);
+                Console.ReadLine();
+            }
+            AlphabeticStringReturn("littttttle");
 
         }
     }
